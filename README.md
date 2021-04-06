@@ -20,6 +20,7 @@ basis of No. of correct Answer.
 ---
 ## Technology Used
 For Front-End: Embedded JavaScript , HTML ,CSS ,Bootstrap
+
 for Back-End : Node JS (Express Framewrok) , MongoDB
 
 ---
@@ -27,14 +28,17 @@ for Back-End : Node JS (Express Framewrok) , MongoDB
 
 Download project
 ```
-git clone https://github.com/DEADPOOL2001/DaaAssingment1.git
+git clone https://github.com/DEADPOOL2001/Online-Test-Management-System-SOE-Project.git
 ```
 Project Initialize 
 ```
 #Opening Assingment folder
-cd DaaAssingment1
+cd Online-Test-Management-System-SOE-Project
 
-#Compiling The code
-g++ daa.cpp -o output
+#Running Code
+1) Download Node-JS version 14.16.0
+2) Download Mongo Db setup Its server at localhost:27017
+3) Write npm i on Command Line
+4) finally ,npm start
 ```
 ---
