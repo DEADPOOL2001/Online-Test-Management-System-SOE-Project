@@ -6,7 +6,7 @@
 |IIT2019113|Nimish Upadhyay|DEADPOOL2001|
 |IIT2019120|Nikil Chouriya|Nikilchouriya|
 |IIT2019094|Sangam Barnwal|sangam65|
-|IIT2019098|Abhinav|Abhinav|
+|IIT2019098|Abhinav|abhinav230201|
 
 group no. - 24
 
