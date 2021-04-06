@@ -9,8 +9,8 @@
 |IIT2019098|Abhinav|Abhinav|
 
 ---
-## Problem Statement
-Given a matrix of N rows and M columns, the task is to find the minimum absolute difference between any of the two adjacent elements of an array of size N, which is created by picking one element from each row of the matrix. Note the element picked from row 1 will become arr[0], element picked from row 2 will become arr[1] and so on. Solve using divide and conquer algorithm.
+## About Project
+
 
 ---
 ## How to use code
