@@ -32,7 +32,7 @@ git clone https://github.com/DEADPOOL2001/Online-Test-Management-System-SOE-Proj
 ```
 Project Initialize 
 ```
-#Opening Assingment folder
+#Opening Project folder
 cd Online-Test-Management-System-SOE-Project
 
 #Running Code
