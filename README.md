@@ -40,5 +40,6 @@ cd Online-Test-Management-System-SOE-Project
 2) Download Mongo Db setup Its server at localhost:27017
 3) Write npm i on Command Line
 4) finally ,npm start
+5) go to site http://localhost:3000/
 ```
 ---
