@@ -35,7 +35,7 @@ Project Initialize
 Opening Project folder
 cd Online-Test-Management-System-SOE-Project
 
-Running Code
+Follow Steps To Run The Code
 1) Download Node-JS version 14.16.0
 2) Download Mongo Db setup Its server at localhost:27017
 3) Write npm i on Command Line
