@@ -12,12 +12,12 @@ group no. - 24
 
 ---
 ## About Project
-```
+
 Our project is about conducting Exam on Online portal In which Teacher/Instructor Can create a course ,In which He can post exam 
 (Mcq exam) which is given by the student who are enrolled to this course,After the Test ends they can see detailed analysis of 
 their response of the that test like pie chart,percentage and teacher can see the responses of all the students who gave exam and 
 evaluate on the basis of No. of correct Answer.
-```
+
 ---
 ## Technology Used
 ```
