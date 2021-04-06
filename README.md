@@ -12,7 +12,15 @@ group no. - 24
 
 ---
 ## About Project
+Our project is about conducting Exam on Online portal In which Teacher/Instructor Can create a course ,In which He can post exam 
+(Mcq exam) which is given by the student who are enrolled to this course,After the Test ends they can see detailed analysis of their response
+of the that test like pie chart,percentage and teacher can see the responses of all the students who gave exam and evaluate on the 
+basis of No. of correct Answer.
 
+---
+## Technology Used
+For Front-End: Embedded JavaScript , HTML ,CSS ,Bootstrap
+for Back-End : Node JS (Express Framewrok) , MongoDB
 
 ---
 ## How to use code
@@ -30,64 +38,3 @@ cd DaaAssingment1
 g++ daa.cpp -o output
 ```
 ---
-
-Run the code
-```
-./output
-```
-Input
-```
-First line of input contains two space seperated integers n and m.
-where n and m are no. of rows and no. of coloumns respectively.
-```
-Ouput 
-```
-Minimum possible absolute difference between any two elements belonging to the consecutive rows.
-```
----
-**Test case**
-
-Test Case-1
-```
-Input:
-7 8
-Output:
-512
-```
-
-Test Case-2
-```
-Input:
-5 5
-Output:
-112
-```
----
-### Theory
-Logic
-```
-We will select two consecutive rows and iterate over a row and find the two elements(if they exist) in another row , just small or equal element then our current element and just larger element the our current element.
-```
-Implementation
-```
-We will randomly generate our 2-d array of size given by the user using rand function and sort all the rows using merge sort.Then we will iterate over the rows from first row to second last row and find the upperbound of the current element using binary search in the next row and if the absolute difference comes out to be lesser then our current answer then we will store it.
-```
----
-### Analysis
-
-**Time Complexity**
-```
-For all the cases : o(n*m*(log(m))
-```
-**Space Complexity**
-```
-For all the cases : o(n*m)
-```
-where n is no. of rows and m is no. of coloumns in our matrix.
-
----
-### References
-
-GFG : Divide and Conquer
-
-Tutorials Point : UpperBound
