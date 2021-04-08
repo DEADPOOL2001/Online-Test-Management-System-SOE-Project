@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Register as a Teacher</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <style>
+      .mssg{
+        border: 0;
+        padding: 0;
+      }
+    </style>
+    <link href="teach_reg.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+  </head>
+
+  <body >
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="lap.png" alt="" width="72" height="72">
+        <h2>Register as a Student</h2>
+        <p class="lead">Please fill your registration form and be a part of our institution.We won't share our details.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 order-md-1 between">
+          <h4 class="mb-3">Credentials</h4>
+          <% if(message==="Sucessful registration") {%>
+            <div class="alert alert-success" id="div" role="alert">
+                <span id="check" ><%=message%></span>
+            </div>
+          <% }%>
+          <% if(message==="Email already registered") {%>
+            <div class="alert alert-danger" id="div" role="alert">
+                <span id="check" ><%=message%></span>
+            </div>
+          <% }%>
+          <form class="needs-validation" novalidate class="" action="/stud_reg" method="post" id="form1">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" placeholder="" value="" required name="fname">
+                <div class="invalid-feedback">
+                  Valid first name is required.
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" placeholder="" value="" required name="lname">
+                <div class="invalid-feedback">
+                  Valid last name is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email">Email <span class="text-muted"></span></label>
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" required name="email">
+              <div class="invalid-feedback">
+                Please enter a valid email address 
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="Password">Password</label>
+              <input type="password" class="form-control" id="Password" placeholder="" required name="pass">
+              <div class="invalid-feedback">
+                Please enter your Password
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="address">Address <span class="text-muted">(Optional)</span></label>
+              <input type="text" class="form-control" id="address" placeholder="1234 Main S" name="add">
+            </div>
+
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">Country</label>
+                <select class="custom-select d-block w-100" id="country" required name="conutry">
+                  <option value="">Choose...</option>
+                  <option>Sri Lanka</option>
+                  <option>Bangladesh</option>
+                  <option>India</option>
+                  <option>Pakistan</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid country.
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="state">State</label>
+                <select class="custom-select d-block w-100" id="state" required name="state">
+                  <option value="">Choose...</option>
+                  <option>kolkata</option>
+                  <option>Mumbai</option>
+                  <option>Uttar Pradesh</option>
+                  <option>Pallekele</option>
+                  <option>Dhaka</option>
+                  <option>Islamabad</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please provide a valid state.
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control" id="zip" placeholder="" required name="zip">
+                <div class="invalid-feedback">
+                  Zip code required.
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="save-info">
+              <label class="custom-control-label" for="save-info">Save this information for next time</label>
+            </div>
+            <hr class="mb-4">
+
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <br>
+            <br>
+          </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+  <title>RESPONSE</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/checkout/">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="test1.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+  <% var total=response.unattempted+response.attempted;%>
+  <% var corr =response.correctAns%>
+  <% var wrong=response.WrongAns%>
+  <% var unatt=response.unattempted%>
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="pic.jpg" alt="" width="72" height="72">
+      <h2>Analysis</h2>
+      <p class="lead">Below is the detailed Analysis of your attempt of the test</p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h3>Pie Chart Analysis</h3>
+          <div id="piechart"></div>
+      </div>
+      <table class="table table-striped table-sm">
+        <tbody>
+          <tr>
+            <th class="cell" scope="row">Attempted by</th>
+            <td class="cell"><%=stud.fName%> <%=stud.Lname%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">Email ID</th>
+            <td class="cell"><%=stud.email%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">Course</th>
+            <td class="cell"><%=course.name%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">Instructor</th>
+            <td class="cell"><%=course.teachName%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">Starting time</th>
+            <% if(Test.Smin>9){%>
+            <td class="cell">Today, 8 April 2021, <%=Test.Shour%>:<%=Test.Smin%></td>
+            <%}%>
+            <% if(Test.Smin<10){%>
+            <td class="cell">Today, 8 April 2021, <%=Test.Shour%>:0<%=Test.Smin%></td>
+            <%}%>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">State</th>
+            <td class="cell">Finished</td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">Total Time Given</th>
+            <td class="cell"><%=Test.Durhour%> Hours <%=Test.Durmin%> minutes</td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row">Total Attempted</th>
+            <td class="cell"><b><%=response.attempted%></b> out of <%=total%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row" style="color:goldenrod;">Total Unattempted</th>
+            <td class="cell"><b><%=response.unattempted%></b> out of <%=total%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row" style="color:green;">Total Correct Answer</th>
+            <td class="cell"><b><%=response.correctAns%></b> out of <%=total%></td>
+          </tr>
+          <tr>
+            <th class="cell" scope="row" style="color:Red;">Total Wrong Answer</th>
+            <td class="cell"><b><%=response.WrongAns%></b> out of <%=total%></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Question Wise Analysis</h4>
+        <%for (var i=0 in Test.Question) {%>
+        <div class="my-3 p-3 bg-white rounded box-shadow cir">
+          <% var j=i ;%>
+          <% j++ ;%>
+          <p class="border-bottom border-gray pb-2 mb-0">Q<%=j%>) <%=Test.Question[i]%></p>
+          1) <%=Test.Op1[i]%>
+          <br>
+          2) <%=Test.Op2[i]%>
+          <br>
+          3) <%=Test.Op3[i]%>
+          <br>
+          4) <%=Test.Op4[i]%>
+          <br>
+          <b>Your Marked Option : <%=response.ans[i]%></b>
+          <br>
+          <b>Correct Option : <%=Test.Answer[i]%></b>
+          <br>
+          <% if(Test.Answer[i]==response.ans[i]) {%>
+          <b style="color:green;">Correct Answer</b>
+          <%}%>
+          <% if(!response.ans[i]) {%>
+          <b style="color:goldenrod;">Unattempted Question</b>
+          <%}%>
+          <% if(Test.Answer[i]!=response.ans[i] && response.ans[i]) {%>
+          <b style="color:Red;">Wrong Answer</b>
+          <%}%>
+        </div>
+        <%}%>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017-2018 Company Name</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      // Load google charts
+      google.charts.load('current', {
+        'packages': ['corechart']
+      });
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Draw the chart and set the chart values
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Correct Answer', <%=corr%>],
+          ['Wrong Answer', <%=wrong%>],
+          ['Unattempted', <%=unatt%>],
+        ]);
+
+        // Optional; add a title and set the width and height of the chart
+        var options = {
+          'title': 'Questions',
+          'width': 400,
+          'height': 400
+        };
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
+</body>
+
+</html>

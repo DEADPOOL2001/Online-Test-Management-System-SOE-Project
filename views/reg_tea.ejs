@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>TEST PAPER</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="test.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+  </head>
+
+  <body >
+
+    <div class="container">
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="lap.png" alt="" width="72" height="72">
+        <h2>Create test</h2>
+        <p class="lead">fill the test question here</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-8 order-md-1 between">
+          <h4 class="mb-3">Questions</h4>
+          <form class="" action="/next" method="post">
+
+            <div class="mb-3">
+              <label for="QUESTION <%=counter%>">QUESTION <%=counter%></label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="ENTER QUESTION-<%=counter%>" name="q" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  QUESTION <%=counter%> is required.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="Option-1">Option-1</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="ENTER OPTION-1" name="op1" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  OPTION-1 is required.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="Option-2">Option-2</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="ENTER OPTION-2" name="op2" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  OPTION-2 is required.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="Option-3">Option-3</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="ENTER OPTION-3" name="op3" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  OPTION-3 is required.
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="Option-4">Option-4</label>
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="ENTER OPTION-4" name="op4" required>
+                <div class="invalid-feedback" style="width: 100%;">
+                  OPTION-4 is required.
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 mb-3">
+                <label for="country">correct answer</label>
+                <select class="custom-select d-block w-100" name="ans"  required>
+                  <option value="">choose</option>
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please enter correct answer.
+                </div>
+            </div>
+            <%if(counter==1){%>
+              <br>
+              <div class="col-md-2">
+                <label for="Start Time">Start Time</label>
+                <div class="input-group" >
+                  <input id="appt-time" type="time" name="Stime" min="00:00" max="23:59" required pattern="[0-9]{2}:[0-9]{2}">
+                  <div class="invalid-feedback" style="width: 100%;">
+                    Start Time is required.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <label for="Total Time">Total Time</label>
+                <div class="input-group col-md-4">
+                  <input type="time" name="Dur" min="00:00" max="23:59" required pattern="[0-9]{2}:[0-9]{2}" placeholder="HH:MM">
+                  <div class="invalid-feedback" style="width: 100%;">
+                    Duration is required.
+                  </div>
+                </div>
+              </div>
+              <%}%>
+            <hr class="mb-4">
+
+            <hr class="mb-4">
+
+
+            <button formaction="/finish" class="btn btn-primary btn-lg btn-block" type="submit">Finish</button>
+            <button formaction="/next" class="btn btn-primary btn-lg btn-block" type="submit">Next Question</button>
+            <br>
+            <br>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function() {
+        'use strict';
+
+        window.addEventListener('load', function() {
+          // Fetch all the forms we want to apply custom Bootstrap validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+    </script>
+  </body>
+</html>
